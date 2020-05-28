@@ -18,8 +18,8 @@ process pc program
   where
     code = program !! pc
     next = process $ pc + 4
-    exec op = set program result $ op (value program 1) (value program 2)
+    exec op = set result $ op (value 1) (value 2)
       where
         result = (program !! (pc + 3))
-        value p o = (p !! (p !! (pc + o)))
-        set l i v = (take i l) ++ v : (snd $ splitAt (i + 1) l)
+        value i = (program !! (program !! (pc + i)))
+        set i v = (take i program) ++ v : (snd $ splitAt (i + 1) program)
