@@ -2,5 +2,5 @@ resolver: lts-15.14
 
 packages:
     - day01    
-    # - day02
+    - day02
   

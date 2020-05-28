@@ -1,0 +1,45 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1b7539f4dee23ba940c7a07682c9c972047a7cb94716ab4e94489cad79bfaba4
+
+name:           day02
+version:        0.0.1
+synopsis:       Advent of Code 2019
+description:    Day 02
+homepage:       https://github.com/haskellicious/aoc2019#readme
+bug-reports:    https://github.com/haskellicious/aoc2019/issues
+maintainer:     Jairinho <t4ngz3r0@gmail.com>
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/haskellicious/aoc2019
+
+library
+  exposed-modules:
+      Day02.PartOne
+  other-modules:
+      Paths_day02
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.12.0.0 && <4.14
+    , split
+  default-language: Haskell2010
+
+test-suite unit
+  type: exitcode-stdio-1.0
+  main-is: Day02.hs
+  other-modules:
+      Paths_day02
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , base >=4.12.0.0 && <4.14
+    , day02
+  default-language: Haskell2010

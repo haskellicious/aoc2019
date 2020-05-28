@@ -1,0 +1,24 @@
+name: day02
+version: 0.0.1
+synopsis: Advent of Code 2019
+description: Day 02
+maintainer: Jairinho <t4ngz3r0@gmail.com>
+github: haskellicious/aoc2019
+
+dependencies:
+  - base >= 4.12.0.0 && < 4.14
+
+library:
+  source-dirs: src
+  dependencies:
+    - split
+  exposed-modules:
+    - Day02.PartOne
+
+tests:
+  unit:
+    main: Day02.hs
+    source-dirs: tests
+    dependencies:
+      - day02
+      - HUnit
