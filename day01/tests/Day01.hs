@@ -2,8 +2,8 @@ module Main
   ( main
   ) where
 
-import           Day01.PartOne
-import           Day01.PartTwo
+import qualified Day01.PartOne
+import qualified Day01.PartTwo
 import           System.Environment
 import           System.Exit
 import           Test.HUnit

@@ -1,5 +1,6 @@
 module Day02.PartOne
   ( solve
+  , process
   ) where
 
 import           Data.List.Split

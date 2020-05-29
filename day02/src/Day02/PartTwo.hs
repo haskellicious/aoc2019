@@ -3,24 +3,19 @@ module Day02.PartTwo
   ) where
 
 import           Data.List.Split
+import qualified Day02.PartOne
 
 solve :: String -> Int
-solve = head . process 0 . program
+solve = process 0 0 . program
   where
-    program = setup . map read . splitOn ","
-    setup (x:_:_:xs) = x : [12, 2] ++ xs
+    program = map read . splitOn ","
 
-process :: Int -> [Int] -> [Int]
-process pc program
-  | code == 1 = next $ exec (+)
-  | code == 2 = next $ exec (*)
-  | code == 99 = program
+process :: Int -> Int -> [Int] -> Int
+process noun verb program
+  | output == 19690720 = 100 * noun + verb
+  | noun == 99 && verb == 99 = 0
+  | verb == 99 = process (noun + 1) 0 program
+  | otherwise = process noun (verb + 1) program
   where
-    code = program !! pc
-    next = process $ pc + 4
-    exec op = set result $ op (value 1) (value 2)
-      where
-        result = program !! (pc + 3)
-        value i = program !! (program !! (pc + i))
-        set i v = take i program ++ v : snd (splitAt (i + 1) program)
-
+    output = head $ Day02.PartOne.process 0 $ setup program
+    setup (x:_:_:xs) = x : [noun, verb] ++ xs
