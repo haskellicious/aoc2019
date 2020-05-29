@@ -1,5 +1,6 @@
 module Day01.PartOne
   ( solve
+  , fuel
   ) where
 
 solve :: String -> Int
