@@ -14,6 +14,7 @@ library:
     - split
   exposed-modules:
     - Day02.PartOne
+    - Day02.PartTwo
 
 tests:
   unit:

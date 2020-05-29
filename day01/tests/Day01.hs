@@ -7,17 +7,14 @@ import           Day01.PartTwo
 import           System.Environment
 import           System.Exit
 import           Test.HUnit
-import           Test.HUnit.Base
 
 run = flip fmap $ readFile "input.txt"
 
-partOne :: Test
 partOne =
   TestCase $ do
     answer <- run Day01.PartOne.solve
     assertEqual "the right answer is 3364035" 3364035 answer
 
-partTwo :: Test
 partTwo =
   TestCase $ do
     answer <- run Day01.PartTwo.solve
@@ -25,7 +22,7 @@ partTwo =
 
 main = do
   counts <- runTestTT $ TestList [partOne, partTwo]
-  finish $ (errors counts) + (failures counts)
+  finish $ errors counts + failures counts
   where
     finish 0 = exitSuccess
     finish _ = exitFailure

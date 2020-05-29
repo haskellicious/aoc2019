@@ -3,12 +3,12 @@ module Day01.PartTwo
   ) where
 
 solve :: String -> Int
-solve = sum . map ((fuel 0) . read) . words
+solve = sum . map (fuel 0 . read) . words
 
 fuel :: Int -> Int -> Int
 fuel total mass
   | f <= 0 = total
-  | otherwise = fuel (total + f) $ f
+  | otherwise = fuel (total + f) f
   where
     f = fuel' mass
 

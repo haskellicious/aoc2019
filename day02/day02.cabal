@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1b7539f4dee23ba940c7a07682c9c972047a7cb94716ab4e94489cad79bfaba4
+-- hash: 717e692f68c8ead7e3c2cbb72a435f57d4719d19c9cddd747a52af9a13f04c1c
 
 name:           day02
 version:        0.0.1
@@ -22,6 +22,7 @@ source-repository head
 library
   exposed-modules:
       Day02.PartOne
+      Day02.PartTwo
   other-modules:
       Paths_day02
   hs-source-dirs:

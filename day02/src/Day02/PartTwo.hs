@@ -1,4 +1,4 @@
-module Day02.PartOne
+module Day02.PartTwo
   ( solve
   ) where
 
@@ -23,3 +23,4 @@ process pc program
         result = program !! (pc + 3)
         value i = program !! (program !! (pc + i))
         set i v = take i program ++ v : snd (splitAt (i + 1) program)
+
